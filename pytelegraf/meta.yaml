@@ -1,0 +1,39 @@
+{% set name = "pytelegraf" %}
+{% set version = "0.3.3" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: 0821ce752591a6cb7e75a92d59eb009c1977312bced8888226cf206fd9c798e0
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - pip
+    - python
+  run:
+    - python
+
+test:
+  imports:
+    - telegraf
+    - telegraf.defaults
+
+about:
+  home: "https://github.com/paksu/pytelegraf"
+  license: MIT
+  license_family: MIT
+  license_file: 
+  summary: "Telegraf client"
+  doc_url: 
+  dev_url: 
+
+extra:
+  recipe-maintainers:
+    - your-github-id-here
