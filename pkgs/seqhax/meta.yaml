@@ -1,0 +1,43 @@
+{% set name = "seqhax" %}
+{% set version = "0.7.2" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/kdm9/{{name}}/archive/{{version}}.tar.gz
+  sha256: fb6a120406628d3338602eb38eca41d0ef7cb6d268750287e7da17004319cf51
+
+build:
+  number: 0
+  skip: True  # [win]
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - zlib
+    - cmake
+
+test:
+  commands:
+    - seqhax
+    - pecheck_wrapper --help
+
+about:
+  home: https://github.com/sahib/rmlint
+  license: GPL-3.0-only
+  license_family: GPL
+  license_file: LICENSE
+  summary: 'Miscelanelous fasta/fastq sequence tools'
+  description: |
+    A seqtk-style toolkit for sequence analysis. By no means feature complete.
+    In fact largely contains features other authors have not merged into their
+    respective tools.
+  dev_url: https://github.com/kdm9/seqhax
+  doc_url: https://github.com/kdm9/seqhax#seqhax
+
+extra:
+  recipe-maintainers:
+    - kdm9
