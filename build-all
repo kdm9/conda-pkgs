@@ -1,4 +1,6 @@
+#!/bin/bash
 
+conda install anaconda-client conda-build
 conda build \
         -c defaults \
         -c conda-forge \
