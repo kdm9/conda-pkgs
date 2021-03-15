@@ -1,6 +1,7 @@
 #!/bin/bash
 
 conda install anaconda-client conda-build
+conda config --set anaconda_upload true
 conda build \
         -c defaults \
         -c conda-forge \
