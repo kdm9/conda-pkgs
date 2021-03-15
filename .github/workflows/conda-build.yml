@@ -22,11 +22,9 @@ jobs:
       - name: conda build all
         shell: bash -l {0}
         run: |
-          conda config --set anaconda_upload false
+          conda config --set anaconda_upload true
           conda install conda-build anaconda-client
-          mkdir -p CONDA_OUTPUT
           conda build --output-folder CONDA_OUTPUT/ \
               -c kdm801 -c conda-forge -c bioconda \
               --skip-existing \
               pkgs/*
-          anaconda upload --label main CONDA_OUTPUT/*/*.tar.bz2
