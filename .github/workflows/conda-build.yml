@@ -24,8 +24,9 @@ jobs:
         run: |
           conda config --set anaconda_upload false
           conda install conda-build anaconda-client
-          conda build -c kdm801 -c conda-forge -c bioconda \
+          mkdir -p CONDA_OUTPUT
+          conda build --output-folder CONDA_OUTPUT/ \
+              -c kdm801 -c conda-forge -c bioconda \
               --skip-existing \
               pkgs/*
-
-          
+          anaconda upload --label main CONDA_OUTPUT/*/*.tar.bz2
