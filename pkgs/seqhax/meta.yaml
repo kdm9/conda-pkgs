@@ -1,5 +1,5 @@
 {% set name = "seqhax" %}
-{% set version = "0.7.2" %}
+{% set version = "0.7.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/kdm9/{{name}}/archive/{{version}}.tar.gz
-  sha256: fb6a120406628d3338602eb38eca41d0ef7cb6d268750287e7da17004319cf51
+  sha256: 13fc3fa44ee12ed08db7cb37e6e7bf592bc310eb706f4bc8db1c8c15988895cd
 
 build:
   number: 0
@@ -19,11 +19,15 @@ requirements:
     - {{ compiler('cxx') }}
     - zlib
     - cmake
+    - make
+    - python
+  run:
+    - python
 
 test:
   commands:
     - seqhax
-    - pecheck_wrapper --help
+    - pecheck-wrapper.py --help
 
 about:
   home: https://github.com/sahib/rmlint
