@@ -1,0 +1,14 @@
+zip_keys:
+  -
+    - python
+    - python_impl
+
+python:
+  # part of a zip_keys: python, python_impl, numpy
+  - 3.8.* *_cpython
+  - 3.9.* *_cpython
+
+python_impl:
+  # part of a zip_keys: python, python_impl, numpy
+  - cpython
+  - cpython

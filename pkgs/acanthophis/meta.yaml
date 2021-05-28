@@ -1,5 +1,5 @@
 {% set name = "Acanthophis" %}
-{% set version = "0.1.3" %}
+{% set version = "0.1.6" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/kdm9/{{name}}/archive/{{version}}.tar.gz
-  sha256: 35faa29f5aeec74d33255e4653a86cf7514af190d34a7da572822cbdd7bfcdd2 
+  sha256: 4464911ef27ab43617d9f7b7c0c19e5134d5797dcfa27ae266b043dd124cbde4
 
 build:
   number: 0
@@ -16,7 +16,7 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python {{python}}
   run:
     - python
     - snakemake

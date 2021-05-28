@@ -1,8 +1,9 @@
 #!/bin/bash
 
-conda install anaconda-client conda-build
+mamba install anaconda-client conda-build boa
 conda config --set anaconda_upload true
-conda build \
+conda mambabuild \
+        -m multipython.yaml \
         -c defaults \
         -c conda-forge \
         -c bioconda \
