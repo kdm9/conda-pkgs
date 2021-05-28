@@ -22,4 +22,4 @@ jobs:
       - name: conda build all
         shell: bash -l {0}
         run: |
-          conda config --set anaconda_upload true && ./build-all
+          ./build-all
