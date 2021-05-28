@@ -22,9 +22,4 @@ jobs:
       - name: conda build all
         shell: bash -l {0}
         run: |
-          conda config --set anaconda_upload true
-          conda install conda-build anaconda-client
-          conda build --output-folder CONDA_OUTPUT/ \
-              -c kdm801 -c conda-forge -c bioconda \
-              --skip-existing \
-              pkgs/*
+          conda config --set anaconda_upload true && ./build-all
