@@ -1,5 +1,5 @@
 {% set name = "Acanthophis" %}
-{% set version = "0.1.12" %}
+{% set version = "0.1.13" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/kdm9/{{name}}/archive/{{version}}.tar.gz
-  sha256: 08be5fc3fd4aafe386fcb06957fce93f3dd5a9b60f27d7f354c2dcc08f1aeaeb
+  sha256: e21081199fac7a46ae12984087bdb878f5140005af8a342a7e09802373a6ed4b
 
 build:
   number: 0
