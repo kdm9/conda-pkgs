@@ -1,13 +1,14 @@
-{% set name = "Acanthophis" %}
-{% set version = "0.1.13" %}
+{% set name = "acanthophis" %}
+{% set version = "0.1.14" %}
+{% set sha = "4bc89f00f6767a129022c03d45a9b776e862fc027f218f974a1e39e653a03e31" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: https://github.com/kdm9/{{name}}/archive/{{version}}.tar.gz
-  sha256: e21081199fac7a46ae12984087bdb878f5140005af8a342a7e09802373a6ed4b
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{name}}-{{ version }}.tar.gz"
+  sha256: "{{ sha }}"
 
 build:
   number: 0
@@ -17,6 +18,8 @@ requirements:
   host:
     - pip
     - python {{python}}
+    - setuptools_scm
+    - setuptools_scm_git_archive
   run:
     - python
     - snakemake
