@@ -21,8 +21,13 @@ requirements:
     - cmake
     - make
     - python
+    - openmp  # [linux]
+    - llvm-openmp  # [osx]
   run:
     - python
+    - openmp  # [linux]
+    - llvm-openmp  # [osx]
+
 
 test:
   commands:
