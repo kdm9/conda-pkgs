@@ -11,4 +11,4 @@ conda mambabuild \
         -c bioconda \
         -c kdm801 \
         --skip-existing \
-        pkgs/acanthophis pkgs/seqhax pkgs/rmlint
+        $1
