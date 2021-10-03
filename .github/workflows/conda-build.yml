@@ -25,4 +25,6 @@ jobs:
           conda config --add channels conda-forge
           conda config --add channels bioconda
           conda config --add channels kdm801
-          ./build-all
+          ./build pkgs/acanthophis
+          ./build pkgs/rmlint
+          ./build pkgs/seqhax
