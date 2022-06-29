@@ -1,7 +1,7 @@
 #!/bin/bash
 
+set -e
 if [ -f .env ] ; then source .env; fi
-conda install mamba
 mamba install anaconda-client conda-build boa
 conda config --set anaconda_upload true
 conda mambabuild \
