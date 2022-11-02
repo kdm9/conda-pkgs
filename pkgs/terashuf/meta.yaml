@@ -1,0 +1,37 @@
+{% set name = "terashuf" %}
+{% set version = "unreleased.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/alexandres/terashuf.git
+  git_rev: c5d520cf528dee5c137a852a7afe6d39b5c3fb67
+
+build:
+  number: 0
+  skip: True  # [win]
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - make
+  run: []
+
+test:
+  commands:
+    - seq 1 10 | terashuf
+
+about:
+  home: https://github.com/alexandres/terashuf
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: 'shuf(1) for big files'
+  description: 'shuf(1) for big files'
+
+extra:
+  recipe-maintainers:
+    - kdm9
