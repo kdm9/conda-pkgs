@@ -25,6 +25,9 @@ jobs:
           conda config --add channels conda-forge
           conda config --add channels bioconda
           conda config --add channels kdm801
-          ./build pkgs/acanthophis
-          ./build pkgs/rmlint
-          ./build pkgs/seqhax
+          conda install --yes mamba
+          ./build --skip-existing pkgs/acanthophis
+          ./build --skip-existing pkgs/axe-demultiplexer/
+          ./build --skip-existing pkgs/rmlint
+          ./build --skip-existing pkgs/seqhax
+          ./build --skip-existing pkgs/terashuf

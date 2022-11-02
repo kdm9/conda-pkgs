@@ -10,4 +10,4 @@ conda mambabuild \
         -c conda-forge \
         -c bioconda \
         -c kdm801 \
-        $1
+        "${@}"
