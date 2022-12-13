@@ -27,7 +27,8 @@ jobs:
           conda config --add channels kdm801
           conda install --yes mamba
           ./build --skip-existing pkgs/acanthophis
-          ./build --skip-existing pkgs/axe-demultiplexer/
+          ./build --skip-existing pkgs/axe-demultiplexer
           ./build --skip-existing pkgs/rmlint
           ./build --skip-existing pkgs/seqhax
           ./build --skip-existing pkgs/terashuf
+          ./build --skip-existing pkgs/gapless

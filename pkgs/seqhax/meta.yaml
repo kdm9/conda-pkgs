@@ -1,5 +1,5 @@
 {% set name = "seqhax" %}
-{% set version = "0.8.3" %}
+{% set version = "0.8.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/kdm9/{{name}}/archive/{{version}}.tar.gz
-  sha256: 43c0a10f257068b4543c1f48567eac2fca428667de3aea16baaf0b35876615f0
+  sha256: 764184c0fdfb3b3eb824e6a1b7c40364ac6ffb28a88cbd272ba460f349659725
 
 build:
   number: 0

@@ -21,6 +21,7 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - python
+    - sphinx
   host:
     - zlib
   run:

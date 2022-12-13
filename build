@@ -2,7 +2,7 @@
 
 set -e
 if [ -f .env ] ; then source .env; fi
-mamba install anaconda-client conda-build boa
+mamba install -c conda-forge -c bioconda -c defaults anaconda-client conda-build boa
 conda config --set anaconda_upload true
 conda mambabuild \
         -m multipython.yaml \
