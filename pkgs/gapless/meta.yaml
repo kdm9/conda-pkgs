@@ -36,7 +36,7 @@ about:
   license_family: MIT
   license_file: LICENSE
   summary: 'Combined scaffolding, gap-closing and assembly correction with long reads'
-  description: |>
+  description: >
     Continuity, correctness and completeness of genome assemblies are important
     for many biological projects. Long reads represent a major driver towards
     delivering high-quality genomes, but not everybody can achieve the
