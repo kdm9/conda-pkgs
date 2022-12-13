@@ -1,0 +1,54 @@
+{% set name = "terashuf" %}
+{% set version = "0.4" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/schmeing/gapless.git
+  git_rev: 61673efeb1f0e2a84f46c5a912a1f17af3f3dd94
+
+build:
+  number: 0
+  skip: True  # [win]
+
+requirements:
+  build:
+    - python
+  run:
+    - python
+    - pandas
+    - numpy
+    - scipy
+    - seaborn
+    - matplotlib=3.5.2
+    - pillow
+    - biopython
+
+test:
+  commands:
+    - gapless.sh -h
+
+about:
+  home: https://github.com/schmeing/gapless
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: 'Combined scaffolding, gap-closing and assembly correction with long reads'
+  description: |>
+    Continuity, correctness and completeness of genome assemblies are important
+    for many biological projects. Long reads represent a major driver towards
+    delivering high-quality genomes, but not everybody can achieve the
+    necessary coverage for good long-read-only assemblies. Therefore, improving
+    existing assemblies with low-coverage long reads is a promising
+    alternative. The improvements include correction, scaffolding and gap
+    filling. However, most tools perform only one of these tasks and the useful
+    information of reads that supported the scaffolding is lost when running
+    separate programs successively. Therefore, we propose a new tool for
+    combined execution of all three tasks using PacBio or Oxford Nanopore
+    reads.
+
+extra:
+  recipe-maintainers:
+    - kdm9
