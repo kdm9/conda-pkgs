@@ -1,5 +1,5 @@
 {% set name = "seqhax" %}
-{% set version = "0.8.4" %}
+{% set version = "0.8.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/kdm9/{{name}}/archive/{{version}}.tar.gz
-  sha256: 764184c0fdfb3b3eb824e6a1b7c40364ac6ffb28a88cbd272ba460f349659725
+  sha256: a0775854d929616707f877fcf66bffec78c027802740c9d8a2bd8bcfc3f99d78
 
 build:
   number: 0
@@ -44,7 +44,7 @@ about:
   summary: 'Miscelanelous fasta/fastq sequence and htslib utilities'
   description: |
     A seqtk-style toolkit for sequence analysis. By no means feature complete.
-    In fact largely contains features other authors have not merged into their
+    In fact largely contains features other authors have not included in their
     respective tools.
   dev_url: https://github.com/kdm9/seqhax
   doc_url: https://github.com/kdm9/seqhax#seqhax
