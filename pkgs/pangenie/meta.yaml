@@ -1,0 +1,55 @@
+{% set name = "pangenie" %}
+{% set version = "2.1.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/eblerjana/{{name}}.git
+  git_rev: "v{{version}}"
+
+build:
+  number: 0
+  skip: True  # [win]
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - zlib
+    - make
+    - openmp  # [linux]
+    - llvm-openmp  # [osx]
+    - cmake
+    - pkg-config
+    - bioconda::jellyfish=2
+  run:
+    - openmp  # [linux]
+    - llvm-openmp  # [osx]
+    - bioconda::jellyfish=2
+
+
+test:
+  commands:
+    # yes this is dumb but they have no --help and so it just exit(1)'s with the usage.
+    - (PanGenie || true) |& grep 'PanGenie - genotyping and phasing based on kmer-counting and known haplotype sequences.'
+
+about:
+  home: https://github.com/eblerjana/pangenie
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE.md
+  summary: 'Genotype graph variants using short reads'
+  description: |
+    A short-read genotyper for various types of genetic variants (such as SNPs,
+    indels and structural variants) represented in a pangenome graph. Genotypes
+    are computed based on read k-mer counts and a panel of known, fully
+    assembled haplotypes. A description of the method can be found here:
+    https://doi.org/10.1038/s41588-022-01043-w
+  dev_url: https://github.com/eblerjana/pangenie
+  doc_url: https://doi.org/10.1038/s41588-022-01043-w
+
+extra:
+  recipe-maintainers:
+    - kdm9
