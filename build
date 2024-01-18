@@ -2,11 +2,10 @@
 
 set -e
 if [ -f .env ] ; then source .env; fi
-mamba install -c conda-forge -c bioconda -c defaults anaconda-client conda-build boa
+mamba install -c conda-forge -c bioconda anaconda-client conda-build boa conda-verify
 conda config --set anaconda_upload true
 conda mambabuild \
         -m multipython.yaml \
-        -c defaults \
         -c conda-forge \
         -c bioconda \
         -c kdm801 \

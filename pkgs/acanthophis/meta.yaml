@@ -1,6 +1,6 @@
 {% set name = "acanthophis" %}
-{% set version = "0.1.16" %}
-{% set sha = "755bbe419b06db49fa6185ae7155ddc8fa93fc4e16de1f240f101745046dccc1" %}
+{% set version = "0.3.1" %}
+{% set sha = "b9c1775c21af44c1e689b07f04c5d1b1c7c800d3349bfb8c83a958cfd3af9df8" %}
 
 package:
   name: "{{ name|lower }}"
@@ -21,8 +21,9 @@ requirements:
     - setuptools_scm
     - setuptools_scm_git_archive
   run:
-    - python
-    - snakemake
+    - python {{python}}
+    - snakemake>=8
+    - natsort
 
 about:
   home: https://github.com/kdm9/Acanthophis
